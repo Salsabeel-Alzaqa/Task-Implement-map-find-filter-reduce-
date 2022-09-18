@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<script>
+"use strict";
+//filter
+/*
+function filterFn(word){
+  const result = words.filter(word => word.length > 7);
+  alert(result);
+  console.log(result);
+}
+*/
+function filter(words,filterFn){
+  filterFn(words);
+}
+function filterFn(word){
+  let result = [];
+  for (let i = 0; i < word.length; i++)
+  {
+    if (word[i].length > 7 )
+    {
+      result.push(word[i]);
+    }
+  }
+  alert(result);
+  console.log(result);
+}
+////////////////////////////////////////////
+//map 
+/*function mapFn(list){
+ const result1 = list.map(x => x * 3);
+ alert(result1);
+ console.log(result1);
+}*/
+function map(list,mapFn){
+  mapFn(list);
+}
+const mult = function(num){
+         return num*2;
+      }
+function mapFn(list){
+  let result=[];
+  for(let i=0; i< list.length; i++)
+  {
+    result.push(mult(list[i]));
+  }
+  alert(result);
+  console.log(result);
+}
+////////////////////////////////////////////
+//find
+/*function findFn(list1){
+  const result2 = list1.find(num => num != 10);
+  alert(result2);
+  console.log(result2);
+}*/
+function find(list1,findFn){
+  findFn(list1);
+}
+function findFn(list1){
+  for(let i in list1)
+    {
+      if(list1[i] !=10)
+        {
+          const result2=list1[i];
+          alert(result2);
+          console.log(result2);
+          break;
+        }
+    }
+}
+////////////////////////////////////////////////
+//reduce
+/*
+function reduceFn(list2){
+  const initialValue = 0;
+  const result = list2.reduce((previousValue, currentValue) => previousValue + currentValue,initialValue);
+alert(result)
+console.log(result);
+}
+*/
+function reduce(list2,reduceFn){
+  reduceFn(list2);
+}
+function reduceFn(list2){
+  let result=0;
+  for(let i=0; i< list2.length; i++)
+  {
+    result+=list2[i];
+  }
+  alert(result)
+  console.log(result);
+}
+
+const words = ['spray', 'limit', 'elite','exuberant', 'destruction', 'present'];
+filter(words,filterFn);
+
+const list = [1, 4, 9, 16];
+map(list,mapFn);
+
+const list1 = [10, 18, 9, 4, 3];
+find(list1,findFn);
+
+const list2 = [1, 2, 3, 4];
+reduce(list2,reduceFn);
+</script>
